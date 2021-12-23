@@ -2,7 +2,7 @@
 #2 convert the Json-formatted string to a Json-object
 #3 modify the Json-object
 #4 covert the Json-object to a Json-formatted string
-#5 save the Json-formatted string to a file
+#5 save the Json-formatted string back to the SAME file
 
 
 #### 1. read a Json-formatted string from a file
@@ -14,18 +14,16 @@ $inputJson = Get-Content -Path $inputFile -encoding utf8 | ConvertFrom-Json # La
 $updateJson = Get-Content -Path $updateFile -encoding utf8 | ConvertFrom-Json  # Laster inn updatefila i minne
 
 #### 3. modify the Json-object
-#loop through all items in the inputJson.listeMedUsers file and add them to the updateJson.listeMedUsers file if they do not exist in the updateJson.listeMedUsers file
-foreach ($item in $inputJson.listeMedUsers) {
-    if (!($item.Name -in $updateJson.listeMedUsers.Name)) {
+# loop through all items in the inputJson.listeMedUsers file 
+# and add them to the updateJson.listeMedUsers file if they do not exist in the updateJson.listeMedUsers file
+foreach ($item in $inputJson.listeMedUsers) 
+{
+    if (!($item.Name -in $updateJson.listeMedUsers.Name)) 
+    {
         Write-Host "Adding $item.Name to $updateJson.listeMedUsers"
         $updateJson.listeMedUsers += $item
     }
 }
-
-
-Write-Host $test.User
-
-
 
 #### 4. covert the Json-object to a Json-formatted string
 $updateJson = ConvertTo-Json -InputObject $updateJson # convert the memory Json-object to a Json-formatted memory string
