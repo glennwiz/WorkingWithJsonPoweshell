@@ -1,0 +1,20 @@
+{
+  "uUser": "testUser",
+  "uPassword": "testPassword",
+  "listeMedUsers": [
+    {
+      "User": "balder",
+      "Password": "testPassword",
+      "Name": "testName",
+      "Surname": "testSurname",
+      "Email": "testEmail"
+    },
+    {
+      "User": "loke",
+      "Password": "testPassword2",
+      "Name": "testName2",
+      "Surname": "testSurname2",
+      "Email": "testEmail2"
+    }
+  ]
+}
