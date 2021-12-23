@@ -11,11 +11,11 @@ $updateFile = 'C:\dev\PSJsonTesting\test.json'      # JSON fila som skal oppdate
 
 #### 2. convert the Json-formatted strings to Json-objects so you can start working with this ONLY in memory
 $inputJson = Get-Content -Path $inputFile -encoding utf8 | ConvertFrom-Json # Laster inn inputfila i minne
-$updateJson = Get-Content -Path $updateFile -encoding utf8 | ConvertFrom-Json  # Laster inn updatefila i minne
+$updateJson = Get-Content -Path $updateFile -encoding utf8 | ConvertFrom-Json  # Laster inn updatefila i minne 
 
 #### 3. modify the Json-object
-# loop through all items in the inputJson.listeMedUsers file 
-# and add them to the updateJson.listeMedUsers file if they do not exist in the updateJson.listeMedUsers file
+# loop through all items in the inputJson.listeMedUsers array
+# and add them to the updateJson.listeMedUsers array if they do not exist in the updateJson.listeMedUsers array
 foreach ($user in $inputJson.listeMedUsers) 
 {
     if (!($user.Name -in $updateJson.listeMedUsers.Name)) #if NOT in array add item
