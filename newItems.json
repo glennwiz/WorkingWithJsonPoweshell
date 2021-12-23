@@ -1,28 +1,28 @@
 {
-    "listeMedUsers": [
+    "Users": [
         {
-            "User": "balder",
+            "UserName": "balder",
             "Password": "testPassword",
             "Name": "testName",
             "Surname": "testSurname",
             "Email": "testEmail"
         },
         {
-            "User": "loke",
+            "UserName": "loke",
             "Password": "testPassword2",
             "Name": "testName2",
             "Surname": "testSurname2",
             "Email": "testEmail2"              
         },
         {
-            "User": "tor",
+            "UserName": "tor",
             "Password": "testPassword3",
             "Name": "testName3",
             "Surname": "testSurname3",
             "Email": "testEmail3"
         },
         {
-            "User": "freia",
+            "UserName": "freia",
             "Password": "testPassword4",
             "Name": "testName4",
             "Surname": "testSurname4",
