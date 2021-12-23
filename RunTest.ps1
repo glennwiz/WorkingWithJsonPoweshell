@@ -16,12 +16,12 @@ $updateJson = Get-Content -Path $updateFile -encoding utf8 | ConvertFrom-Json  #
 #### 3. modify the Json-object
 # loop through all items in the inputJson.listeMedUsers file 
 # and add them to the updateJson.listeMedUsers file if they do not exist in the updateJson.listeMedUsers file
-foreach ($item in $inputJson.listeMedUsers) 
+foreach ($user in $inputJson.listeMedUsers) 
 {
-    if (!($item.Name -in $updateJson.listeMedUsers.Name)) 
+    if (!($user.Name -in $updateJson.listeMedUsers.Name)) #if NOT in array add item
     {
-        Write-Host "Adding $item.Name to $updateJson.listeMedUsers"
-        $updateJson.listeMedUsers += $item
+        Write-Host "Adding $user.Name to $updateJson.listeMedUsers"
+        $updateJson.listeMedUsers += $user
     }
 }
 
